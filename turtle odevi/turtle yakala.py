@@ -2,12 +2,15 @@ from PIL import Image
 import turtle
 from random import randint
 import time
+import os
 
 # Görüntüyü yükle ve yeniden boyutlandır
-image_path = r"C:\Users\firdo\Desktop\phyton projects\images - Copy\output-onlinegiftools.gif"
+directory=os.path.dirname(os.path.abspath(__file__))
+image_path=os.path.join(directory,"images (turtle)","output-onlinegiftools.gif")
 image = Image.open(image_path)
 resized_image = image.resize((80, 80))  # Boyutları değiştir, örneğin 80x80 piksel
-resized_image_path = r"C:\Users\firdo\Desktop\phyton projects\images - Copy\resized_output.gif"
+
+resized_image_path=os.path.join(directory,"images (turtle)","resized_output.gif")
 resized_image.save(resized_image_path)
 
 # Turtle'da yeniden boyutlandırılmış görüntüyü kullan
